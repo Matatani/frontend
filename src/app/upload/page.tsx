@@ -1,6 +1,7 @@
 "use client"
 
 import {useState} from "react";
+import { apiBase } from '@/lib/constants';
 import * as tus from "tus-js-client"
 
 export default function FileUpload() {
@@ -21,7 +22,7 @@ export default function FileUpload() {
         }
 
         const upload = new tus.Upload(file, {
-            endpoint: 'http://localhost:8080/upload/',
+            endpoint: `${apiBase}/upload/`,
             retryDelays: [0, 3000, 5000, 10000, 20000],
             metadata: {
                 filename: file.name,
