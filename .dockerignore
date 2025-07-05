@@ -1,0 +1,10 @@
+# Dependencies
+node_modules
+
+# Next.js build artifacts
+.next
+
+# Other
+npm-debug.log
+README.md
+.env.local
