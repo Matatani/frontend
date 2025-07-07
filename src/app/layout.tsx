@@ -1,5 +1,17 @@
+import { Inter, Nunito_Sans } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/app/_components/Navbar";
 
+// Font configuration
+const inter = Inter({
+    subsets: ["latin"],
+    variable: "--font-inter",
+});
+
+const nunito_sans = Nunito_Sans({
+    subsets: ["latin"],
+    variable: "--font-nunito",
+});
 
 export const metadata = {
     title: "Matatani Diagnostics",
@@ -7,15 +19,16 @@ export const metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
+                                       children,
+                                   }: Readonly<{
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body>
+    return (
+        <html lang="en">
+        <body className={`${nunito_sans.variable} ${inter.variable} bg-[#F7F6F1]`}>
+        <Navbar/>
         {children}
-      </body>
-    </html>
-  );
+        </body>
+        </html>
+    );
 }
